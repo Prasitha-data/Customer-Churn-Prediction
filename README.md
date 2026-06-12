@@ -2,17 +2,14 @@
 
 ## Project Overview
 
-This project predicts customer churn using Machine Learning and provides business insights through a Power BI dashboard and a Streamlit web application.
+This project predicts whether a customer is likely to churn using Machine Learning techniques. The objective is to help businesses identify at-risk customers and improve customer retention strategies.
 
-The objective is to identify customers who are likely to leave a telecom service provider and help businesses improve customer retention strategies.
+The project includes:
 
----
-
-## Dataset
-
-* IBM Telco Customer Churn Dataset
-* Total Records: 7,043 Customers
-* Features: 45+
+* Machine Learning Model (XGBoost)
+* Interactive Streamlit Web Application
+* Power BI Dashboard
+* Customer Churn Analysis
 
 ---
 
@@ -25,142 +22,138 @@ The objective is to identify customers who are likely to leave a telecom service
 * XGBoost
 * Streamlit
 * Power BI
-* GitHub
 
 ---
 
-## Data Preprocessing
+## Dataset Information
 
-* Missing Value Handling
-* Feature Selection
-* One-Hot Encoding
-* SMOTE for Class Balancing
-* Train-Test Split
+The dataset contains customer demographic information, account details, services subscribed, and churn status.
 
----
+Features include:
 
-## Machine Learning Models
+* Gender
+* Senior Citizen
+* Partner
+* Dependents
+* Tenure
+* Monthly Charges
+* Total Charges
+* Contract Type
+* Internet Service
+* Payment Method
 
-### Logistic Regression
+Target Variable:
 
-* Accuracy: 76.37%
-* Precision: 53.78%
-* Recall: 78.07%
-* F1 Score: 63.69%
-
-### Random Forest
-
-* Accuracy: 95.17%
-* Precision: 96.64%
-* Recall: 84.76%
-* F1 Score: 90.31%
-
-### XGBoost (Best Model)
-
-* Accuracy: 96.52%
-* Precision: 96.83%
-* Recall: 89.84%
-* F1 Score: 93.20%
-* ROC-AUC Score: 99.09%
+* Churn (Yes / No)
 
 ---
 
-## Key Business Insights
+## Machine Learning Model
 
-* Customers with lower satisfaction scores have the highest churn risk.
-* Month-to-Month contracts contribute the largest share of churn.
-* Fiber Optic internet users show relatively higher churn.
-* Customers with longer tenure demonstrate stronger retention.
-* Referral programs improve customer loyalty.
-* Churned customers have lower overall lifetime value compared to retained customers.
+Algorithm Used:
+
+* XGBoost Classifier
+
+Model Objective:
+
+* Predict customer churn probability
+* Identify high-risk customers
+* Support customer retention strategies
+
+---
+
+## Streamlit Application
+
+The Streamlit application allows users to:
+
+* Enter customer details
+* Predict churn probability
+* View prediction results instantly
+* Support business decision making
+
+### Streamlit App Screenshot
+
+![Streamlit App](app.png)
+
+### Prediction Result
+
+![Prediction Result](model_result.png)
 
 ---
 
 ## Power BI Dashboard
 
-The dashboard provides:
+The Power BI dashboard provides:
 
-* Churn Rate Analysis
+* Customer Churn Overview
+* Churn Distribution
 * Contract Analysis
-* Internet Type Analysis
-* Customer Lifetime Value Analysis
-* Satisfaction Score Analysis
-* Interactive Slicers
+* Customer Segmentation
+* Business Insights
 
-### Dashboard Preview
+### Dashboard Screenshot
 
-![Dashboard](screenshots/dashboard.png)
-
----
-
-## Streamlit Web Application
-
-The application allows users to:
-
-* Enter customer information
-* Predict churn probability
-* Identify customers at risk of leaving
-
-### App Preview
-
-![Streamlit App](screenshots/app.png)
+![Power BI Dashboard](dashboard.png)
 
 ---
 
 ## Project Structure
 
+```text
 Customer-Churn-Prediction/
-
+│
 ├── app.py
-
 ├── churn_model.pkl
-
 ├── model_columns.pkl
-
 ├── customer_churn_cleaned.csv
-
-├── Customer_Churn_Prediction.ipynb
-
 ├── customer_churn_prediction.pbix
-
+├── Customer_Churn_Prediction.ipynb
 ├── requirements.txt
-
 ├── README.md
-
-└── screenshots/
-
-    ├── app.png
-
-    ├── dashboard.png
-
-    └── model_result.png
+├── app.png
+├── model_result.png
+└── dashboard.png
+```
 
 ---
 
-## How to Run the Project
+## Installation
 
-1. Clone the repository.
-2. Install dependencies:
+Clone the repository:
 
+```bash
+git clone https://github.com/Prasitha-data/Customer-Churn-Prediction.git
+```
+
+Move into project folder:
+
+```bash
+cd Customer-Churn-Prediction
+```
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
-3. Run the Streamlit application:
+Run the Streamlit application:
 
+```bash
 streamlit run app.py
+```
 
 ---
 
-## Future Improvements
+## Business Impact
 
-* Deploy the application on Streamlit Cloud.
-* Add customer retention recommendations.
-* Integrate real-time customer data.
-* Improve model explainability using SHAP.
+* Improves customer retention
+* Reduces revenue loss
+* Identifies high-risk customers
+* Supports data-driven decision making
 
 ---
 
-## Author
+## Developed By
 
 **Prasitha**
-
-Customer Churn Prediction using XGBoost, Streamlit, and Power BI.
